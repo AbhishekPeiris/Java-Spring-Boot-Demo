@@ -20,6 +20,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/user/{userId}")
+    public UserDTO getUserById(@PathVariable Integer userId){
+        return userService.getUserId(userId);
+    }
+
     @PostMapping("/adduser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO){
         return userService.saveUser(userDTO);
